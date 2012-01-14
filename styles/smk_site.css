@@ -1,0 +1,64 @@
+#comp_name {
+  font-size: 4em;
+  font-weight: bold;
+  font-family: verdana;
+  color: blue;
+}
+
+#body {
+  font-family: sans-serif;
+}
+
+#main {
+  padding-bottom: 1em;
+}
+
+#maintext {
+  font-size: 1.4em;
+  padding-left: 2em;
+}
+
+#fromto {
+  font-family: sans-serif;
+  font-size: 5em;
+  font-weight: bold;
+  text-align: center;
+  color: #C00000;
+  padding-right: .5em;
+}
+
+#nav_bar {
+  background: #99FFFF;
+  font-family: sans-serif;
+  font-size: 1.75em;
+  font-weight: bold;
+  text-align: left;
+}
+ul.nav { 
+  list-style: none;
+}
+
+li.nav {
+  padding-bottom: 5px
+}
+
+a.nav {
+  color: blue;
+  text-decoration:none;
+}
+
+a.nav:hover {
+  text-decoration: underline;
+  color: darkblue;
+}
+
+
+#footer {
+  background-color: #E8E8E8;
+}
+
+#wwwlicense {
+  font-style: italic;
+  fond-size: .8em;
+}
+
