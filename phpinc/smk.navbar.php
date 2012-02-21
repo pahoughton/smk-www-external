@@ -5,11 +5,11 @@
     <ul class="nav">
         <?php
         $nav = array(
-            "Home" => "index.php",
-            "About" => "about.php",
-            "Services" => "services.php",
-            "Formats" => "formats.php",
-            "Hardware" => "hardware.php",
+            "Home" => "/index.php",
+            "About" => "/about.php",
+            "Services" => "/services.php",
+            "Formats" => "/formats.php",
+            "Hardware" => "/hardware.php",
             "Support" => "smk_support" );
 
         $under_constr = array(
