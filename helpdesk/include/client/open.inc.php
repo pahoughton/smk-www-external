@@ -2,6 +2,10 @@
 if(!defined('OSTCLIENTINC')) die('Kwaheri rafiki!'); //Say bye to our friend..
 
 $info=($_POST && $errors)?Format::input($_POST):array(); //on error...use the post data
+if( ! ($_POST && $errors) ) {
+    $info['name'] = $thisclient->getName();
+    $info['email'] = $thisclient->getEmail();
+}
 ?>
 <div>
     <?if($errors['err']) {?>
@@ -33,7 +37,7 @@ $info=($_POST && $errors)?Format::input($_POST):array(); //on error...use the po
             <?if ($thisclient && ($email=$thisclient->getEmail())) {
                 ?>
                 <input type="hidden" name="email" size="25" value="<?=$email?>"><?=$email?>
-            <?}else {?>             
+            <?}else {?>
                 <input type="text" name="email" size="25" value="<?=$info['email']?>">
             <?}?>
             &nbsp;<font class="error">*&nbsp;<?=$errors['email']?></font>
@@ -98,9 +102,9 @@ $info=($_POST && $errors)?Format::input($_POST):array(); //on error...use the po
     <? }
     }?>
 
-    <?if(($cfg->allowOnlineAttachments() && !$cfg->allowAttachmentsOnlogin())  
+    <?if(($cfg->allowOnlineAttachments() && !$cfg->allowAttachmentsOnlogin())
                 || ($cfg->allowAttachmentsOnlogin() && ($thisclient && $thisclient->isValid()))){
-        
+
         ?>
     <tr>
         <td>Attachment:</td>
@@ -127,7 +131,7 @@ $info=($_POST && $errors)?Format::input($_POST):array(); //on error...use the po
         <td>
             <input class="button" type="submit" name="submit_x" value="Submit Ticket">
             <input class="button" type="reset" value="Reset">
-            <input class="button" type="button" name="cancel" value="Cancel" onClick='window.location.href="index.php"'>    
+            <input class="button" type="button" name="cancel" value="Cancel" onClick='window.location.href="index.php"'>
         </td>
     </tr>
 </table>

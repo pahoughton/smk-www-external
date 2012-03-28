@@ -1,6 +1,10 @@
 <?php
 if(!defined('OSTSCPINC') || !is_object($thisuser) || !$thisuser->isStaff()) die('Access Denied');
 $info=($_POST && $errors)?Format::input($_POST):array(); //on error...use the post data
+if( ! ($_POST && $errors) ) {
+    $info['name'] = $thisuser->getName();
+    $info['email'] = $thisuser->getEmail();
+}
 ?>
 <div width="100%">
     <?if($errors['err']) {?>
@@ -204,13 +208,13 @@ $info=($_POST && $errors)?Format::input($_POST):array(); //on error...use the po
         <td>
             <input class="button" type="submit" name="submit_x" value="Submit Ticket">
             <input class="button" type="reset" value="Reset">
-            <input class="button" type="button" name="cancel" value="Cancel" onClick='window.location.href="tickets.php"'>    
+            <input class="button" type="button" name="cancel" value="Cancel" onClick='window.location.href="tickets.php"'>
         </td>
     </tr>
   </form>
 </table>
 <script type="text/javascript">
-    
+
     var options = {
         script:"ajax.php?api=tickets&f=searchbyemail&limit=10&",
         varname:"input",
